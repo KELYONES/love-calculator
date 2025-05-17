@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Love Score Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background: linear-gradient(to right, #a93539, #fad0c4);
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>❤️ Love Score Calculator ❤️</h1>
+
+  <input type="text" id="yourName" placeholder="Your name">
+  <input type="text" id="theirName" placeholder="Their name">
+  <br>
+  <button onclick="calculateLove()">Check Love Score</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateLove() {
+      const yourName = document.getElementById("yourName").value;
+      const theirName = document.getElementById("theirName").value;
+      
+      if (!yourName || !theirName) {
+        alert("Please enter both names!");
+        return;
+      }
+
+      const loveScore = Math.floor(Math.random() * 100) + 1;
+      let message = "";
+
+      if (loveScore > 80) {
+        message = "💘 You're made for each other!";
+      } else if (loveScore > 50) {
+        message = "😊 There's potential here!";
+      } else {
+        message = "😬 Might need some work...";
+      }
+
+      document.getElementById("result").innerText =
+        `${yourName} ❤️ ${theirName}\nLove Score: ${loveScore}%\n${message}`;
+    }
+  </script>
+    <div><footer>&copy;Kelly Johns</footer></div>
+</body>
+</html>
+
